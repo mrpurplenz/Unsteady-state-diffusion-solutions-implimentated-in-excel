@@ -2,7 +2,7 @@
 
 ## Overview
 
-This workbook implements the analytical transient heat conduction solutions presented in:
+This workbook implements a selection of the analytical transient heat conduction solutions presented in:
 
 > Crank, J. *The Mathematics of Diffusion*, 2nd Edition.
 
