@@ -222,8 +222,8 @@ Bi
 
 where:
 
-- \(J_0\) = Bessel function of the first kind, order zero
-- \(J_1\) = Bessel function of the first kind, order one
+- \(J<sub>0</sub>\) = Bessel function of the first kind, order zero
+- \(J<sub>1</sub>\) = Bessel function of the first kind, order one
 
 ---
 
