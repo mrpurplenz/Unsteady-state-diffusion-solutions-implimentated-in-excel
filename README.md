@@ -215,9 +215,7 @@ Bi
 ## Cylinder
 
 ```math
-\beta\{J_1(\beta)}\-Bi\{J_0(\lambda)}
-=
-0
+\beta J_1(\beta)-Bi\,J_0(\beta)=0
 ```
 
 where:
