@@ -45,8 +45,10 @@ No external software, numerical PDE solvers, or finite-difference methods are re
 | Sheet | Purpose |
 |---------|---------|
 | Home | Workbook overview and navigation |
+| Full formula | native formuala examples of Cranks general solutions |
+| Eigen Value validation | Eigenvalue equations and roots |
+| Terms needed validation | Illustration of terms converging to solution |
 | References | Source references and bibliography |
-| Eigen Values | Eigenvalue equations and roots |
 | Slab 1st Boundary | Constant surface temperature slab solution |
 | Slab 3rd Boundary | Convective slab solution |
 | Cylinder 1st Boundary | Constant surface temperature cylinder solution |
@@ -60,7 +62,7 @@ No external software, numerical PDE solvers, or finite-difference methods are re
 
 # Governing Equation
 
-The workbook solves the transient conduction equation:
+The workbook impliments a selection of Cranks solutions to the transient conduction equation:
 
 ```math
 \frac{\partial T}{\partial t}
@@ -76,7 +78,7 @@ where:
 | t | Time |
 | α | Thermal diffusivity |
 
-The analytical solutions assume:
+These analytical solutions assume:
 
 - Constant thermal properties
 - Uniform initial temperature
@@ -84,7 +86,7 @@ The analytical solutions assume:
 - Isotropic material properties
 - No internal heat generation
 - One-dimensional conduction
-- Constant boundary conditions
+- Constant or convective boundary conditions
 
 ---
 
@@ -186,13 +188,14 @@ This condition is commonly encountered in:
 # Eigenvalue Equations
 
 The convective boundary condition requires solution of geometry-specific transcendental equations.
+Eigen value functions are either presented inline using LET as EIGEN, or used as named functions being BETA_SLAB, BETA_CYLINDER, or BETA_SPHERE respectively
 
 ---
 
 ## Slab
 
 ```math
-\lambda\tan\lambda
+\beta\tan\beta
 =
 Bi
 ```
@@ -202,7 +205,7 @@ Bi
 ## Sphere
 
 ```math
-1-\lambda\cot\lambda
+1-\beta\cot\beta
 =
 Bi
 ```
@@ -212,11 +215,9 @@ Bi
 ## Cylinder
 
 ```math
-\lambda
-\frac{J_1(\lambda)}
-     {J_0(\lambda)}
+\beta\{J_1(\beta)}\-Bi\{J_0(\lambda)}
 =
-Bi
+0
 ```
 
 where:
@@ -266,16 +267,19 @@ This allows the series length to be altered simply by changing the number of ter
 Example:
 
 ```excel
-LET(
-    λ,(m-1)*PI()+θ,
-    λ*TAN(λ)-Bi
+=LET(
+  R,$B$5,
+  D,$B$6,
+  t,$B$3,
+  Fo,D*t/(R^2),
+  Fo
 )
 ```
 
 which directly represents:
 
 ```math
-\lambda\tan\lambda-Bi=0
+\fract{\D\t}\{R²}
 ```
 
 ---
@@ -297,7 +301,7 @@ without requiring VBA.
 # Root Finding
 
 The worksheet uses a custom function:
-
+Either listed by LET as BISECT or added as a nammed function FZERO_BISECT
 ```text
 FZERO_BISECT()
 ```
@@ -355,72 +359,7 @@ The workbook includes implementations of the classical Gurney-Lurie representati
 - Spheres
 
 These charts historically provided graphical approximations of transient conduction solutions before computer-based calculations became widely available.
-
-The exact Crank solutions and Gurney-Lurie representations can be compared directly within the workbook.
-
----
-
-# Validation
-
-The workbook should satisfy the following limiting behaviours:
-
-## Initial Condition
-
-At:
-
-```math
-Fo=0
-```
-
-the solution should reproduce:
-
-```math
-Y=1
-```
-
-for all geometries.
-
----
-
-## Long Time Limit
-
-As:
-
-```math
-Fo\rightarrow\infty
-```
-
-the solution approaches:
-
-```math
-Y\rightarrow0
-```
-
-for cooled objects.
-
----
-
-## Large Biot Number
-
-As:
-
-```math
-Bi\rightarrow\infty
-```
-
-the third-boundary solution approaches the first-boundary solution.
-
----
-
-## Small Biot Number
-
-As:
-
-```math
-Bi\rightarrow0
-```
-
-the solution approaches lumped-capacitance behaviour.
+It is left as an excersize for the user to evaluate how close the presented implementation of Gurney-Lurie charts match th epublished ones.
 
 ---
 
@@ -437,7 +376,6 @@ Potential applications include:
 - Engineering education
 - Heat-transfer teaching
 - Validation of numerical models
-- Comparison with Heisler charts
 - Comparison with Gurney-Lurie charts
 
 ---
@@ -472,7 +410,7 @@ Incropera, F.P., DeWitt, D.P., Bergman, T.L., & Lavine, A.S. *Fundamentals of He
 
 Richard Edmonds
 
-Food Processing Engineer
+Bioprocess Engineer
 
 New Zealand
 
