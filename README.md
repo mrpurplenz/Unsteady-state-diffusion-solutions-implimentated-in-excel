@@ -389,6 +389,11 @@ Potential applications include:
 Older Excel versions may not support all functions required by the workbook.
 
 ---
+# Dependencies
+
+Eigenvalues are determined using the
+[Native excel root finding gist](https://gist.github.com/mrpurplenz/72d605884ac01b09f96c5b06d4f5d09f)
+root-finding function.
 
 # References
 
