@@ -277,7 +277,7 @@ Example:
 which directly represents:
 
 ```math
-\fract{\D\t}\{R²}
+Fo=\frac{Dt}{R^2}
 ```
 
 ---
