@@ -1,5 +1,9 @@
 # Excel Implementation of Crank's Analytical Solutions for Transient Heat Conduction
 
+## Download
+
+- CrankSolutions.xlsx
+
 ## Overview
 
 This workbook implements a selection of the analytical transient heat conduction solutions presented in:
