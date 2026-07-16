@@ -2,7 +2,9 @@
 
 ## Download
 
-<a href="CrankSolutions.xlsx" download="CrankSolutions.xlsx">Click Here to Download Excel File</a>
+<a href="CrankSolutions.xlsx" download>
+  <button type="button">📥 Download Excel File CrankSolutions.xlsx</button>
+</a>
 
 ## Overview
 
