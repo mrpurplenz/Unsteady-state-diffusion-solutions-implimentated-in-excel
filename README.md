@@ -57,6 +57,11 @@ No external software, numerical PDE solvers, or finite-difference methods are re
 | Sphere 3rd Boundary | Convective sphere solution |
 | Gurney and Lurie | Classical chart representation |
 | FZERO_BISECT | Documentation of root-finding function |
+---
+
+# Example usage for a sphere, 3rd type (convective) boundary condition
+
+<img src="images/Sphere.png" alt="Example application of the native functional implimentation of Cranks solution to unsteady state diffusion for a sphere with a convective boundary condition" width="500">
 
 ---
 
