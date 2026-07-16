@@ -359,12 +359,8 @@ The workbook includes implementations of the classical Gurney-Lurie representati
 These charts historically provided graphical approximations of transient conduction solutions before computer-based calculations became widely available.
 It is left as an excersize for the user to evaluate how close the presented implementation of Gurney-Lurie charts match the published ones.
 
-!images/gurney.png
-
 <img src="images/gurney.png" alt="Gurney Lurie chart re-implimentation" width="500">
 
-
-[Gurney_Lurie chart](images/gurney.png)
 
 
 ---
