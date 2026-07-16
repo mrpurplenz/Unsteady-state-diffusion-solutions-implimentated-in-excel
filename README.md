@@ -361,6 +361,7 @@ It is left as an excersize for the user to evaluate how close the presented impl
 
 !images/gurney.png
 
+<img src="images/gurney.png" alt="Gurney Lurie chart re-implimentation" width="500">
 
 
 [Gurney_Lurie chart](images/gurney.png)
